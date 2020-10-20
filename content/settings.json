@@ -1,0 +1,10 @@
+{
+  "title": "Exobole documentation website",
+  "url": "doc.exobole.com",
+  "logo": {
+    "light": "/logo-light.svg",
+    "dark": "/logo-dark.svg"
+  },
+  "github": "LouisLec/exodoc",
+  "twitter": "@exobole"
+}
