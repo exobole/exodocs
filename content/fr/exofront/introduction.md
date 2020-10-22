@@ -16,6 +16,54 @@ Par principe, une application développée pour le web ou pour le mobile, en nat
 
 Ainsi, nous assurons l'évolutivité des produits que nous livrons.
 
+## Configuration VSCode
+
+### Plugins spécifiques
+- Vetur
+- Tailwind CSS IntelliSense
+- Stylelint
+- Dart
+- Flutter
+
+### Configuration de stylelint
+Pour éviter les conflits de validation de style avec tailwind il est nécessaire de configurer stylelint.
+
+- Créer à la racine du projet un dossier **.vscode**
+- Ajouter un fichier **settings.json** :
+```json
+{
+    "css.validate": false,
+    "less.validate": false,
+    "scss.validate": false
+}
+```
+- Installer la configuration standard de stylelint :
+```
+npm i stylelint-config-standard -D
+```
+- Créer à la racine du projet un fichier **stylelint.config.js** :
+```javascript
+module.exports = {
+    extends: ['stylelint-config-recommended'],
+    rules: {
+        "at-rule-no-unknown": [
+            true,
+            {
+                ignoreAtRules: [
+                    "tailwind",
+                    "apply",
+                    "variants",
+                    "responsive",
+                    "screen",
+                ],
+            },
+        ],
+        "declaration-block-trailing-semicolon": null,
+        "no-descending-specificity": null,
+    },
+};
+```
+
 ## Liens utiles
 
 ### Images
